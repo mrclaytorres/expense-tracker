@@ -4,20 +4,62 @@ import "./ExpenseForm.css";
 
 const ExpenseForm = () => {
 
-  const [enteredTitle, setEnteredTitle] = useState('');
-  const [enteredAmount, setEnteredAmount] = useState('');
-  const [enteredDate, setEnteredDate] = useState('');
+  // Use singel/sliced States to update State
+  // const [enteredTitle, setEnteredTitle] = useState('');
+  // const [enteredAmount, setEnteredAmount] = useState('');
+  // const [enteredDate, setEnteredDate] = useState('');
+  
+  // Use one State to update State
+  const [userInput, setUserInput] = useState({
+    enteredTitle: '',
+    enteredAmount: '',
+    enteredDate: ''
+  });
 
   const titleChangeHandler = (event) => {
-    setEnteredTitle(event.target.value);
+    // setEnteredTitle(event.target.value);
+    
+    // Use one State to update State
+    // setUserInput({
+    //   ...userInput,
+    //   enteredTitle: event.target.value
+    // });
+
+    // Use prevState if your state depends on a previous state. (e.g. counter)
+    setUserInput((prevState) => {
+      return {...prevState, enteredTitle: event.target.value};
+    });
   };
 
   const amountChangeHandler = (event) => {
-    setEnteredAmount(event.target.value);
+    // setEnteredAmount(event.target.value);
+    
+    // Use one State to update State
+    // setUserInput({
+    //   ...userInput,
+    //   enteredAmount: event.target.value
+    // });
+
+    // Use prevState if your state depends on a previous state. (e.g. counter)
+    setUserInput((prevState) => {
+      return {...prevState, enteredAmount: event.target.value};
+    });
   };
 
   const dateChangeHandler = (event) => {
-    setEnteredDate(event.target.value);
+    // setEnteredDate(event.target.value);
+    
+    // Use one State to update State
+    // setUserInput({
+    //   ...userInput,
+    //   enteredDate: event.target.value
+    // });
+
+    // Use prevState if your state depends on a previous state. (e.g. counter)
+    setUserInput((prevState) => {
+      return {...prevState, enteredDate: event.target.value};
+    });
+
   };
 
   return (
