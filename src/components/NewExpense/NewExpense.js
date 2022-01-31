@@ -3,14 +3,16 @@ import React from "react";
 import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
 
-const NewExpense = () => {
+const NewExpense = (props) => {
 
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
       id: Math.random().toString()
     };
-    console.log(expenseData);
+    
+    // Pass the data into the parent component (App.js)
+    props.onAddExpense(expenseData);
   };
 
   return (
