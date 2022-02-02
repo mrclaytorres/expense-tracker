@@ -7,13 +7,11 @@ const ExpensesFilter = (props) => {
   // Set the change year data to State
   const selectChangeHandler = (event) => {
     
+    // Pass the changed year data by calling the custom prop
     props.onChangeYear(event.target.value);
 
   };
-
-  // Pass the changed year data by calling the custom prop
   
-
   return (
     <div className="expenses-filter">
       <div className="expenses-filter__control">
